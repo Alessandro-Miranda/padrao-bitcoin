@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      :root,
+      :host {
+        --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+        --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+        --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+        --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+        --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+        --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+        --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+      }
+
+      svg:not(:root).svg-inline--fa,
+      svg:not(:host).svg-inline--fa {
+        overflow: visible;
+        box-sizing: content-box;
+      }
+
+      .svg-inline--fa {
+        display: var(--fa-display, inline-block);
+        height: 1em;
+        overflow: visible;
+        vertical-align: -0.125em;
+      }
+
+      .svg-inline--fa.fa-2xs {
+        vertical-align: 0.1em;
+      }
+
+      .svg-inline--fa.fa-xs {
+        vertical-align: 0em;
+      }
+
+      .svg-inline--fa.fa-sm {
+        vertical-align: -0.0714285705em;
+      }
+
+      .svg-inline--fa.fa-lg {
+        vertical-align: -0.2em;
+      }
+
+      .svg-inline--fa.fa-xl {
+        vertical-align: -0.25em;
+      }
+
+      .svg-inline--fa.fa-2xl {
+        vertical-align: -0.3125em;
+      }
+
+      .svg-inline--fa.fa-pull-left {
+        margin-right: var(--fa-pull-margin, 0.3em);
+        width: auto;
+      }
+
+      .svg-inline--fa.fa-pull-right {
+        margin-left: var(--fa-pull-margin, 0.3em);
+        width: auto;
+      }
+
+      .svg-inline--fa.fa-li {
+        width: var(--fa-li-width, 2em);
+        top: 0.25em;
+      }
+
+      .svg-inline--fa.fa-fw {
+        width: var(--fa-fw-width, 1.25em);
+      }
+
+      .fa-layers svg.svg-inline--fa {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .fa-layers-counter,
+      .fa-layers-text {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+      }
+
+      .fa-layers {
+        display: inline-block;
+        height: 1em;
+        position: relative;
+        text-align: center;
+        vertical-align: -0.125em;
+        width: 1em;
+      }
+
+      .fa-layers svg.svg-inline--fa {
+        transform-origin: center center;
+      }
+
+      .fa-layers-text {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center center;
+      }
+
+      .fa-layers-counter {
+        background-color: var(--fa-counter-background-color, #ff253a);
+        border-radius: var(--fa-counter-border-radius, 1em);
+        box-sizing: border-box;
+        color: var(--fa-inverse, #fff);
+        line-height: var(--fa-counter-line-height, 1);
+        max-width: var(--fa-counter-max-width, 5em);
+        min-width: var(--fa-counter-min-width, 1.5em);
+        overflow: hidden;
+        padding: var(--fa-counter-padding, 0.25em 0.5em);
+        right: var(--fa-right, 0);
+        text-overflow: ellipsis;
+        top: var(--fa-top, 0);
+        transform: scale(var(--fa-counter-scale, 0.25));
+        transform-origin: top right;
+      }
+
+      .fa-layers-bottom-right {
+        bottom: var(--fa-bottom, 0);
+        right: var(--fa-right, 0);
+        top: auto;
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: bottom right;
+      }
+
+      .fa-layers-bottom-left {
+        bottom: var(--fa-bottom, 0);
+        left: var(--fa-left, 0);
+        right: auto;
+        top: auto;
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: bottom left;
+      }
+
+      .fa-layers-top-right {
+        top: var(--fa-top, 0);
+        right: var(--fa-right, 0);
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: top right;
+      }
+
+      .fa-layers-top-left {
+        left: var(--fa-left, 0);
+        right: auto;
+        top: var(--fa-top, 0);
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: top left;
+      }
+
+      .fa-1x {
+        font-size: 1em;
+      }
+
+      .fa-2x {
+        font-size: 2em;
+      }
+
+      .fa-3x {
+        font-size: 3em;
+      }
+
+      .fa-4x {
+        font-size: 4em;
+      }
+
+      .fa-5x {
+        font-size: 5em;
+      }
+
+      .fa-6x {
+        font-size: 6em;
+      }
+
+      .fa-7x {
+        font-size: 7em;
+      }
+
+      .fa-8x {
+        font-size: 8em;
+      }
+
+      .fa-9x {
+        font-size: 9em;
+      }
+
+      .fa-10x {
+        font-size: 10em;
+      }
+
+      .fa-2xs {
+        font-size: 0.625em;
+        line-height: 0.1em;
+        vertical-align: 0.225em;
+      }
+
+      .fa-xs {
+        font-size: 0.75em;
+        line-height: 0.0833333337em;
+        vertical-align: 0.125em;
+      }
+
+      .fa-sm {
+        font-size: 0.875em;
+        line-height: 0.0714285718em;
+        vertical-align: 0.0535714295em;
+      }
+
+      .fa-lg {
+        font-size: 1.25em;
+        line-height: 0.05em;
+        vertical-align: -0.075em;
+      }
+
+      .fa-xl {
+        font-size: 1.5em;
+        line-height: 0.0416666682em;
+        vertical-align: -0.125em;
+      }
+
+      .fa-2xl {
+        font-size: 2em;
+        line-height: 0.03125em;
+        vertical-align: -0.1875em;
+      }
+
+      .fa-fw {
+        text-align: center;
+        width: 1.25em;
+      }
+
+      .fa-ul {
+        list-style-type: none;
+        margin-left: var(--fa-li-margin, 2.5em);
+        padding-left: 0;
+      }
+
+      .fa-ul>li {
+        position: relative;
+      }
+
+      .fa-li {
+        left: calc(-1 * var(--fa-li-width, 2em));
+        position: absolute;
+        text-align: center;
+        width: var(--fa-li-width, 2em);
+        line-height: inherit;
+      }
+
+      .fa-border {
+        border-color: var(--fa-border-color, #eee);
+        border-radius: var(--fa-border-radius, 0.1em);
+        border-style: var(--fa-border-style, solid);
+        border-width: var(--fa-border-width, 0.08em);
+        padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+      }
+
+      .fa-pull-left {
+        float: left;
+        margin-right: var(--fa-pull-margin, 0.3em);
+      }
+
+      .fa-pull-right {
+        float: right;
+        margin-left: var(--fa-pull-margin, 0.3em);
+      }
+
+      .fa-beat {
+        animation-name: fa-beat;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, ease-in-out);
+      }
+
+      .fa-bounce {
+        animation-name: fa-bounce;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+      }
+
+      .fa-fade {
+        animation-name: fa-fade;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+      }
+
+      .fa-beat-fade {
+        animation-name: fa-beat-fade;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+      }
+
+      .fa-flip {
+        animation-name: fa-flip;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, ease-in-out);
+      }
+
+      .fa-shake {
+        animation-name: fa-shake;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, linear);
+      }
+
+      .fa-spin {
+        animation-name: fa-spin;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 2s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, linear);
+      }
+
+      .fa-spin-reverse {
+        --fa-animation-direction: reverse;
+      }
+
+      .fa-pulse,
+      .fa-spin-pulse {
+        animation-name: fa-spin;
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+        animation-timing-function: var(--fa-animation-timing, steps(8));
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+
+        .fa-beat,
+        .fa-bounce,
+        .fa-fade,
+        .fa-beat-fade,
+        .fa-flip,
+        .fa-pulse,
+        .fa-shake,
+        .fa-spin,
+        .fa-spin-pulse {
+          animation-delay: -1ms;
+          animation-duration: 1ms;
+          animation-iteration-count: 1;
+          transition-delay: 0s;
+          transition-duration: 0s;
+        }
+      }
+
+      @keyframes fa-beat {
+
+        0%,
+        90% {
+          transform: scale(1);
+        }
+
+        45% {
+          transform: scale(var(--fa-beat-scale, 1.25));
+        }
+      }
+
+      @keyframes fa-bounce {
+        0% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        10% {
+          transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+        }
+
+        30% {
+          transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+        }
+
+        50% {
+          transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+        }
+
+        57% {
+          transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+        }
+
+        64% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        100% {
+          transform: scale(1, 1) translateY(0);
+        }
+      }
+
+      @keyframes fa-fade {
+        50% {
+          opacity: var(--fa-fade-opacity, 0.4);
+        }
+      }
+
+      @keyframes fa-beat-fade {
+
+        0%,
+        100% {
+          opacity: var(--fa-beat-fade-opacity, 0.4);
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(var(--fa-beat-fade-scale, 1.125));
+        }
+      }
+
+      @keyframes fa-flip {
+        50% {
+          transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+        }
+      }
+
+      @keyframes fa-shake {
+        0% {
+          transform: rotate(-15deg);
+        }
+
+        4% {
+          transform: rotate(15deg);
+        }
+
+        8%,
+        24% {
+          transform: rotate(-18deg);
+        }
+
+        12%,
+        28% {
+          transform: rotate(18deg);
+        }
+
+        16% {
+          transform: rotate(-22deg);
+        }
+
+        20% {
+          transform: rotate(22deg);
+        }
+
+        32% {
+          transform: rotate(-12deg);
+        }
+
+        36% {
+          transform: rotate(12deg);
+        }
+
+        40%,
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      @keyframes fa-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .fa-rotate-90 {
+        transform: rotate(90deg);
+      }
+
+      .fa-rotate-180 {
+        transform: rotate(180deg);
+      }
+
+      .fa-rotate-270 {
+        transform: rotate(270deg);
+      }
+
+      .fa-flip-horizontal {
+        transform: scale(-1, 1);
+      }
+
+      .fa-flip-vertical {
+        transform: scale(1, -1);
+      }
+
+      .fa-flip-both,
+      .fa-flip-horizontal.fa-flip-vertical {
+        transform: scale(-1, -1);
+      }
+
+      .fa-rotate-by {
+        transform: rotate(var(--fa-rotate-angle, 0));
+      }
+
+      .fa-stack {
+        display: inline-block;
+        vertical-align: middle;
+        height: 2em;
+        position: relative;
+        width: 2.5em;
+      }
+
+      .fa-stack-1x,
+      .fa-stack-2x {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: var(--fa-stack-z-index, auto);
+      }
+
+      .svg-inline--fa.fa-stack-1x {
+        height: 1em;
+        width: 1.25em;
+      }
+
+      .svg-inline--fa.fa-stack-2x {
+        height: 2em;
+        width: 2.5em;
+      }
+
+      .fa-inverse {
+        color: var(--fa-inverse, #fff);
+      }
+
+      .sr-only,
+      .fa-sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .sr-only-focusable:not(:focus),
+      .fa-sr-only-focusable:not(:focus) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .svg-inline--fa .fa-primary {
+        fill: var(--fa-primary-color, currentColor);
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa .fa-secondary {
+        fill: var(--fa-secondary-color, currentColor);
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-primary {
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-secondary {
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa mask .fa-primary,
+      .svg-inline--fa mask .fa-secondary {
+        fill: black;
+      }
+
+      .fad.fa-inverse,
+      .fa-duotone.fa-inverse {
+        color: var(--fa-inverse, #fff);
+      }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ether Private Bank | Web3 Bank</title>
+    
+    <script type="module" crossorigin="" src="/assets/index-Dh8orlns.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-CjIeS52r.css">
+  </head>
+
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div id="root">
+      <header class="heading ">
+        <div class="d-flex align-items-center justify-content-between container">
+          <a class="logo active">
+          <img
+              src="data:image/png;base64,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"
+              alt="logo"></a>
+          <nav class="heading-menu ms-0 ms-lg-4 ">
+            <ul class="d-lg-flex align-items-center">
+              <li><a class="heading-link text-sm" href="#sobre-nos">Sobre Nós</a></li>
+              <li><a class="heading-link text-sm" href="#solucoes">Nossas Soluções</a></li>
+              <li><a class="heading-link text-sm" href="#servicos">Serviços</a></li>
+              <li><a class="heading-link text-sm" href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="country-select-wrapper"><button class="country-select d-flex align-items-center"><img
+                src="/assets/flagBR-BiHeY0Kg.png" width="30" height="auto" alt="country-flag"><svg stroke="currentColor"
+                fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                </path>
+              </svg></button></div>
+        </div>
+      </header>
+      <div class="banner">
+        <div class="banner-bg"><img class="d-none d-lg-block" src="/assets/banner-background-CuHSBWvp.png" alt=""><img
+            class="d-block d-lg-none" src="/assets/banner-bgForMobile-BaYorDMK.png" alt=""></div>
+        <div class="container">
+          <div class="align-items-center justify-content-center align-items-center justify-content-lg-start row">
+            <div class="col-lg-6 col-md-10">
+              <div class="common text-center text-lg-start">
+                <div class="common-meta aos-init aos-animate" data-aos-duration="1000"
+                  data-aos-delay="">ETHER PRIVATE BANK</div>
+                <h1 data-aos-duration="1200" data-aos-delay="" class="aos-init aos-animate"><span>Seu
+                    Patrimônio </span> protegido com <span>Criptoativos e DeFi</span></h1>
+                <p data-aos-duration="1400" data-aos-delay="" class="aos-init">Private Banking + DeFi
+                  em um único dashboard exclusivo.</p><button class="btn open-account-btn aos-init"
+                  data-aos-duration="1600" data-aos-delay="">Abra Sua Conta Hoje</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about" id="sobre-nos">
+        <div class="container">
+          <div class="justify-content-center justify-content-lg-start row">
+            <div class="col-lg-6">
+              <div class="about-img aos-init"><img src="/assets/about-img-rUOL7bls.png" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="common text-center text-lg-start">
+                <div class="common-meta aos-init">Sobre Nós</div>
+                <h2 class="aos-init"><span>Use a tecnologia</span><span class="text-black"> DeFi para
+                    a Sua Prosperidade Financeira</span></h2>
+                <p class="aos-init">Somos uma instituição financeira global que oferece soluções de
+                  gestão de patrimônio DeFi seguras e personalizadas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="about-wrap overflow-auto">
+                <div class="about-card d-flex justify-content-lg-center align-items-center flex-lg-wrap">
+                  <div class="about-card-single aos-init" data-aos-delay="200">
+                    <div class="icon"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M24.875 14.9574C24.7128 14.5469 24.2485 14.3459 23.838 14.508C23.4275 14.6703 23.2264 15.1346 23.3886 15.545C23.7948 16.5721 24.0006 17.6576 24.0006 18.7715C24.0006 23.6102 20.064 27.5469 15.2252 27.5469C10.3861 27.5469 6.44899 23.6102 6.44899 18.7715C6.44899 13.9328 10.3861 9.99612 15.2252 9.99612C16.343 9.99612 17.4304 10.2033 18.4571 10.6118C18.8671 10.7752 19.3318 10.5747 19.495 10.1648C19.6583 9.75467 19.4581 9.28998 19.048 9.12683C17.8324 8.64306 16.5462 8.39783 15.2253 8.39783C9.50485 8.39783 4.85077 13.0514 4.85077 18.7714C4.85077 24.4915 9.50463 29.1451 15.2252 29.1451C20.9452 29.1451 25.5988 24.4915 25.5988 18.7715C25.5988 17.4556 25.3552 16.1724 24.875 14.9574Z"
+                          fill="#080E0F"></path>
+                        <path
+                          d="M29.8017 14.5924C29.6803 14.168 29.2382 13.9228 28.8136 14.044C28.3893 14.1654 28.1438 14.6078 28.2652 15.0321C28.6116 16.2429 28.7872 17.5011 28.7872 18.7714C28.7872 26.25 22.7033 32.3345 15.2251 32.3345C7.7465 32.3345 1.66213 26.2501 1.66213 18.7714C1.66213 11.2927 7.74642 5.20844 15.2251 5.20844C16.4984 5.20844 17.7587 5.38487 18.9708 5.73292C19.3951 5.85464 19.8376 5.60962 19.9594 5.18536C20.0812 4.7611 19.8361 4.31848 19.4118 4.19676C18.0563 3.8075 16.6476 3.61011 15.2251 3.61011C6.86518 3.61018 0.0638428 10.4115 0.0638428 18.7715C0.0638428 27.1315 6.86518 33.9328 15.2251 33.9328C23.5846 33.9328 30.3855 27.1315 30.3855 18.7715C30.3855 17.3522 30.1891 15.9462 29.8017 14.5924Z"
+                          fill="#080E0F"></path>
+                        <path
+                          d="M20.7893 18.2835C20.7502 17.8439 20.3618 17.5211 19.9223 17.5586C19.4827 17.5978 19.1581 17.986 19.1974 18.4256C19.2075 18.5394 19.2127 18.6558 19.2127 18.7715C19.2127 20.9704 17.4238 22.7591 15.2251 22.7591C13.0258 22.7591 11.2365 20.9703 11.2365 18.7715C11.2366 16.5721 13.0258 14.7829 15.2251 14.7829C15.348 14.7829 15.4682 14.7883 15.5828 14.7988C16.0227 14.8391 16.4114 14.5159 16.452 14.0764C16.4925 13.6369 16.169 13.2478 15.7296 13.2072C15.5666 13.1922 15.3969 13.1846 15.2252 13.1846C12.1447 13.1846 9.63837 15.6907 9.63837 18.7714C9.63837 21.8515 12.1447 24.3573 15.2252 24.3573C18.3053 24.3573 20.8111 21.8515 20.8111 18.7714C20.811 18.6086 20.8037 18.4443 20.7893 18.2835Z"
+                          fill="#20CDE1"></path>
+                      </svg></div>
+                    <div class="text">
+                      <h4>Nossa Missão</h4>
+                      <p>Compromisso com a Privacidade, Segurança e Avanço Financeiro.</p>
+                    </div>
+                  </div>
+                  <div class="about-card-single aos-init" data-aos-delay="300">
+                    <div class="icon"><svg width="34" height="36" viewBox="0 0 34 36" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="18" r="6" fill="#20CDE1"></circle>
+                        <path
+                          d="M16.7047 0.11229C16.5992 0.16843 16.4797 0.273694 16.4375 0.350886C16.3953 0.435097 16.3672 1.43159 16.3672 3.05264V5.62808L16.5711 5.83159C16.8523 6.11229 17.1969 6.11229 17.5063 5.83159L17.7383 5.62808V3.01755V0.407027L17.5063 0.203518C17.2531 -0.0210433 17 -0.0561309 16.7047 0.11229Z"
+                          fill="#20CDE1"></path>
+                        <path
+                          d="M3.45781 5.43153C3.16953 5.55785 3.00781 5.79644 3.00781 6.0982C3.00781 6.32978 3.13437 6.47715 4.72344 8.06311L6.43906 9.77539L6.74844 9.73329C7.14922 9.67715 7.36719 9.43153 7.36719 9.03153C7.36719 8.75083 7.33906 8.71574 5.77109 7.13679C4.88516 6.25258 4.06953 5.48767 3.94297 5.43153C3.67578 5.31925 3.725 5.31925 3.45781 5.43153Z"
+                          fill="#080E0F"></path>
+                        <path
+                          d="M30.1836 5.43153C30.0711 5.48767 29.2555 6.25258 28.3766 7.13679C26.8016 8.71574 26.7734 8.75083 26.7734 9.03153C26.7734 9.43153 26.9914 9.67715 27.3922 9.73329L27.7016 9.77539L29.4172 8.06311C31.0062 6.47715 31.1328 6.32978 31.1328 6.0982C31.1328 5.78943 30.9711 5.55785 30.6687 5.43153C30.3945 5.31925 30.4437 5.31925 30.1836 5.43153Z"
+                          fill="#080E0F"></path>
+                      </svg></div>
+                    <div class="text">
+                      <h4>Nossos Valores</h4>
+                      <p>Guardiões da segurança e privacidade financeira de nossos clientes</p>
+                    </div>
+                  </div>
+                  <div class="about-card-single aos-init" data-aos-delay="400">
+                    <div class="icon"><svg width="34" height="32" viewBox="0 0 34 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8.38671 0.594543C8.23202 0.664856 7.99296 0.847668 7.85234 0.995325C7.57812 1.29064 4.94843 4.89767 4.69531 5.32657C4.49843 5.66407 4.48437 6.19142 4.66718 6.53595C4.88515 6.95782 14.8133 18.025 15.1437 18.2219C15.5445 18.4539 15.9945 18.5031 16.4375 18.3625C16.7609 18.257 16.8172 18.257 17.1406 18.3625C17.5625 18.5031 17.9914 18.4609 18.4062 18.25C18.6031 18.1445 20.0797 16.5484 23.757 12.4352C26.5414 9.31329 28.8758 6.66251 28.932 6.55001C29.0726 6.27579 29.0656 5.6711 28.918 5.37579C28.7422 5.04532 25.8031 1.01642 25.6273 0.861731C25.543 0.791418 25.3461 0.671886 25.1914 0.601574C24.9172 0.467981 24.643 0.460949 16.7891 0.460949C9.01952 0.460949 8.6539 0.467981 8.38671 0.594543ZM15.193 1.25548C15.0031 1.57892 12.2469 5.4461 12.2047 5.45314C12.1414 5.45314 8.42187 1.45939 8.42187 1.38907C8.42187 1.19923 8.85077 1.17111 11.9937 1.17111C14.7008 1.16407 15.2422 1.17814 15.193 1.25548ZM23.3281 1.29064L23.4898 1.42423L21.6336 3.42814C20.6141 4.53907 19.7492 5.43204 19.707 5.42501C19.6437 5.41095 16.9226 1.6422 16.7117 1.28361C16.6484 1.17111 16.8172 1.16407 19.9109 1.16407C22.9625 1.16407 23.1805 1.17111 23.3281 1.29064ZM17.4781 3.54767C18.3008 4.70079 18.9687 5.6711 18.9687 5.6922C18.9687 5.71329 17.6117 5.73439 15.9453 5.73439C14.2859 5.73439 12.9219 5.71329 12.9219 5.6922C12.9219 5.62892 15.8961 1.44532 15.9453 1.44532C15.9734 1.44532 16.6625 2.39454 17.4781 3.54767ZM9.78593 3.90626C10.6578 4.84845 11.375 5.65001 11.375 5.67814C11.375 5.74845 5.34921 5.75548 5.30702 5.67814C5.29296 5.65001 5.88359 4.79923 6.62187 3.78673C7.88046 2.05001 7.97187 1.94454 8.08437 2.06407C8.14765 2.12736 8.91406 2.95704 9.78593 3.90626ZM25.2547 3.7797C25.9719 4.77111 26.5625 5.61485 26.5625 5.65704C26.5625 5.71329 25.6555 5.73439 23.532 5.73439C21.4648 5.73439 20.5086 5.71329 20.5297 5.66407C20.5508 5.58673 23.9117 1.93048 23.9328 1.9586C23.9328 1.96564 24.5305 2.78829 25.2547 3.7797ZM13.6109 11.8305C14.4687 14.8328 15.1578 17.3008 15.1437 17.3149C15.1226 17.3359 5.44765 6.51485 5.41249 6.43048C5.39843 6.39532 6.88906 6.3672 8.72421 6.3672H12.0641L13.6109 11.8305ZM19.0812 6.48673C19.0672 6.55704 18.357 9.03907 17.5203 12.0063C16.6766 14.9805 15.9664 17.4063 15.9453 17.4063C15.9242 17.4063 15.2141 14.9594 14.3633 11.9711C13.5195 8.98985 12.8094 6.50079 12.7953 6.45157C12.7742 6.38829 13.4351 6.3672 15.9453 6.3672C18.9336 6.3672 19.1164 6.37423 19.0812 6.48673ZM26.4148 6.50079C26.2672 6.7047 16.7609 17.3289 16.7398 17.3078C16.7328 17.3008 17.4219 14.8328 18.2797 11.8305L19.8336 6.3672H23.1734C26.4641 6.3672 26.5062 6.3672 26.4148 6.50079Z"
+                          fill="#16C0D3"></path>
+                      </svg></div>
+                    <div class="text">
+                      <h4>Nossa Visão</h4>
+                      <p>Privacidade, Prosperidade, Liberdade</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="solution" id="solucoes">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="common text-center">
+                <div class="common-meta aos-init" data-aos-duration="1000">Nossas Soluções</div>
+                <h2 class="text-white aos-init" data-aos-duration="1200" data-aos-delay="100">Explore
+                  Nossas Soluções</h2>
+                <p class="text-white aos-init" data-aos-duration="1400" data-aos-delay="150">Descubra
+                  soluções abrangentes sob medida para atender às suas necessidades financeiras.</p>
+              </div>
+              <div class="video-presentation aos-init" data-aos-duration="1800" data-aos-delay="250">
+                <div style="padding: 56.25% 0px 0px; position: relative;"><iframe
+                    src="https://player.vimeo.com/video/918165715?h=1c612d4f38&amp;title=0&amp;byline=0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="services" id="servicos">
+        <div class="container">
+          <div class="justify-content-center justify-content-lg-start flex-lg-row-reverse row">
+            <div class="col-lg-6 col-12">
+              <div class="common">
+                <div class="common-meta aos-init" data-aos-duration="1000" data-aos-delay="">Nossos
+                  Serviços</div>
+                <h2 data-aos-duration="1200" data-aos-delay="" class="aos-init"><span>Global</span>
+                  Serviços</h2>
+                <ul>
+                  <li data-aos-duration="1300" data-aos-delay="100" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Gerencie Seu Patrimônio em Escala Global.</li>
+                  <li data-aos-duration="1400" data-aos-delay="200" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Câmbio de Moeda em USDT – Transações OTC.</li>
+                  <li data-aos-duration="1500" data-aos-delay="300" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Câmbio de Moeda via SWIFT – FIAT.</li>
+                  <li data-aos-duration="1600" data-aos-delay="400" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Proteção de Ativos – Transações com Total Privacidade sem Bloqueios.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="services-img aos-init" data-aos-duration="" data-aos-delay=""><img
+                  src="/assets/service-img-1-gXzEoJY-.png" alt=""></div>
+            </div>
+          </div>
+          <div class="justify-content-center justify-content-lg-start  row">
+            <div class="col-lg-6 col-12">
+              <div class="common">
+                <div class="common-meta aos-init" data-aos-duration="1000" data-aos-delay="">Nossos
+                  Serviços</div>
+                <h2 data-aos-duration="1200" data-aos-delay="" class="aos-init"><span>Nacional</span>
+                  Serviços (Mercado Brasileiro)</h2>
+                <ul>
+                  <li data-aos-duration="1300" data-aos-delay="100" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Serviços Financeiros Sob Medida para o Mercado Brasileiro.</li>
+                  <li data-aos-duration="1400" data-aos-delay="200" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Pagamentos Instantâneos com PIX.</li>
+                  <li data-aos-duration="1500" data-aos-delay="300" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Transferências Eletrônicas (TED).</li>
+                  <li data-aos-duration="1600" data-aos-delay="400" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Boletos de Pagamento.</li>
+                  <li data-aos-duration="1700" data-aos-delay="500" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Links de Pagamento com Cartão de Crédito.</li>
+                  <li data-aos-duration="1800" data-aos-delay="600" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Serviços de Faturamento.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="services-img aos-init" data-aos-duration="" data-aos-delay=""><img
+                  src="/assets/service-img-2-BBIdLW9I.png" alt=""></div>
+            </div>
+          </div>
+          <div class="justify-content-center justify-content-lg-start flex-lg-row-reverse row">
+            <div class="col-lg-6 col-12">
+              <div class="common">
+                <div class="common-meta aos-init" data-aos-duration="1000" data-aos-delay="">Nossos
+                  Serviços</div>
+                <h2 data-aos-duration="1200" data-aos-delay="" class="aos-init">
+                  <span>Tecnológico</span> Serviços</h2>
+                <ul>
+                  <li data-aos-duration="1300" data-aos-delay="100" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Utilizando Tecnologia para Melhorar Suas Operações Financeiras.</li>
+                  <li data-aos-duration="1400" data-aos-delay="200" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Soluções de Pagamento para Gamming e Bets.</li>
+                  <li data-aos-duration="1500" data-aos-delay="300" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Soluções de Pagamento (Pix para Web3, Web3 para Pix).</li>
+                  <li data-aos-duration="1600" data-aos-delay="400" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Banco Digital: Soluções White Label.</li>
+                  <li data-aos-duration="1700" data-aos-delay="500" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Infraestrutura Tecnológica para Operações com Cartão de Crédito MASTERCARD</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="services-img aos-init" data-aos-duration="" data-aos-delay=""><img
+                  src="/assets/service-img-3-CHCbmaBh.png" alt=""></div>
+            </div>
+          </div>
+          <div class="justify-content-center justify-content-lg-start  row">
+            <div class="col-lg-6 col-12">
+              <div class="common">
+                <div class="common-meta aos-init" data-aos-duration="1000" data-aos-delay="">Nossos
+                  Serviços</div>
+                <h2 data-aos-duration="1200" data-aos-delay="" class="aos-init"><span>EDEN</span>
+                  (Escritório Numérico Descentralizado)</h2>
+                <ul>
+                  <li data-aos-duration="1300" data-aos-delay="100" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Torne-se um Parceiro do Escritório Ether Web3 Bank.</li>
+                  <li data-aos-duration="1400" data-aos-delay="200" class="aos-init"><img
+                      src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_1_178)'%3e%3cpath%20d='M5.3418%208.35683L7.78158%208.32427L7.96387%208.37148C8.45703%208.6547%208.9209%208.98025%209.35384%209.34649C9.66634%209.61181%209.96582%209.89992%2010.249%2010.2124C11.1247%208.80445%2012.0573%207.5104%2013.042%206.32216C14.1211%205.01997%2015.2653%203.8366%2016.4681%202.75741L16.7057%202.66626H19.3685L18.8314%203.26201C17.1826%205.09484%2015.6852%206.98953%2014.3327%208.94281C12.9785%2010.901%2011.7692%2012.9194%2010.6934%2014.9964L10.3581%2015.6426L10.0505%2014.985C9.48242%2013.7674%208.80371%2012.6492%207.99316%2011.6497C7.18262%2010.6503%206.24023%209.76319%205.1416%209.00955L5.3418%208.35683Z'%20fill='%23080E0F'/%3e%3cpath%20d='M10%200C11.5511%200%2013.0192%200.353219%2014.3311%200.983153C13.7939%201.40799%2013.2959%201.81493%2012.832%202.20884C11.9482%201.88817%2010.9961%201.71238%2010.0016%201.71238C7.71322%201.71238%205.64128%202.64019%204.14225%204.14096C2.64323%205.64174%201.71387%207.71222%201.71387%2010.0008C1.71387%2012.2894%202.6416%2014.3599%204.14225%2015.8607C5.6429%2017.3614%207.71322%2018.2892%2010.0016%2018.2892C12.29%2018.2892%2014.362%2017.3614%2015.861%2015.8607C17.3617%2014.3599%2018.2878%2012.2894%2018.2878%2010.0008C18.2878%209.45715%2018.2357%208.92325%2018.1348%208.40889C18.5645%207.84895%2019.0055%207.289%2019.4548%206.73557C19.8079%207.75779%2020%208.85814%2020%2010.0008C20%2012.7615%2018.8802%2015.2633%2017.0719%2017.0717C15.262%2018.8817%2012.762%2020.0016%2010.0016%2020.0016C7.24121%2020.0016%204.74121%2018.8817%202.93132%2017.0717C1.11979%2015.2617%200%2012.7615%200%2010.0008C0%207.23854%201.11979%204.73834%202.92806%202.92993C4.73796%201.11988%207.23796%200%2010%200Z'%20fill='%23080E0F'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1_178'%3e%3crect%20width='20'%20height='20'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt=""> Painel de Acesso de Gestão para Parceiros do EDEN.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="services-img aos-init" data-aos-duration="" data-aos-delay=""><img
+                  src="/assets/service-img-4-BT6-XFL0.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="common text-center">
+                <div class="common-meta aos-init" data-aos-duration="1000" data-aos-delay="">Conheça
+                  Nossos Parceiros Estratégicos</div>
+                <h2 data-aos-duration="1200" data-aos-delay="" class="aos-init">Dedicando a melhor
+                  experiência DeFi</h2>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="carousel slide">
+                <div class="carousel-indicators"><button type="button" data-bs-target="" aria-label="Slide 1"
+                    class="active" aria-current="true"></button></div>
+                <div class="carousel-inner">
+                  <div class="active carousel-item">
+                    <div class="justify-content-center text-center row">
+                      <div class="mb-3 mb-md-0 col-md-4 col-12"><img class="img-fluid"
+                          src="/assets/Dinamo_LogoWhite-CEqbSWSK.png" alt="Dinamo Partner Image"
+                          style="max-width: 50%;"></div>
+                      <div class="mb-3 mb-md-0 col-md-4 col-12"><img class="img-fluid"
+                          src="/assets/Hathor_LogoWhite-CMYJVfPM.png" alt="Hathor Partner Image"
+                          style="max-width: 50%;"></div>
+                      <div class="col-md-4 col-12"><img class="img-fluid" src="/assets/Camara_LogoWhite-BETiuRay.png"
+                          alt="Camera Paraguaya de Blockchain Partner Image" style="max-width: 50%;"></div>
+                    </div>
+                  </div>
+                </div><a class="carousel-control-prev" role="button" tabindex="0" href="#"><span aria-hidden="true"
+                    class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a
+                  class="carousel-control-next" role="button" tabindex="0" href="#"><span aria-hidden="true"
+                    class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer" id="contato">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-logo"><img
+                  src="data:image/png;base64,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"
+                  alt="Footer"></div>
+              <div class="footer-item d-flex justify-content-between flex-wrap">
+                <div class="footer-item-single">
+                  <h5>Políticas</h5>
+                  <ul>
+                    <li><a href="/documents/politicaAntissubornoAnticorrupcao.pdf" target="_blank">Política
+                        Anticorrupção e Antissuborno</a></li>
+                    <li><a href="/documents/dueDiligencePolicy.pdf" target="_blank">Política de Due Diligence</a></li>
+                    <li><a target="_blank">Política de Privacidade</a></li>
+                    <li><a href="/documents/acceptanceofTerms.pdf" target="_blank">Termos de Uso</a></li>
+                  </ul>
+                </div>
+                <div class="footer-item-single">
+                  <h5>Prevenção</h5>
+                  <ul>
+                    <li><a href="/documents/politicaPrevencaoLavagemDinheiroFinanciamentoTerrorismo.pdf"
+                        target="_blank">Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo</a>
+                    </li>
+                    <h5>Privacidade</h5>
+                    <ul>
+                      <li><a href="/documents/documentoDiretrizesLgpd.pdf" target="_blank">Diretrizes LGPD</a></li>
+                    </ul>
+                  </ul>
+                </div>
+                <div class="footer-item-single">
+                  <h5>Ética</h5>
+                  <ul>
+                    <li><a href="/documents/codigoEticaCondutaFornecedores.pdf" target="_blank">Código de Ética e
+                        Conduta para Fornecedores</a></li>
+                  </ul>
+                  <div class="more">
+                    <h5>Segurança</h5>
+                    <ul>
+                      <li><a href="/documents/politicaSegurancaInformacaoCibernetica.pdf" target="_blank">Política de
+                          Segurança da Informação e Cibernética (PSIC)</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-item-single">
+                  <div class="more">
+                    <h5>LGPD</h5>
+                    <ul>
+                      <li><a href="/documents/leiGeralProtecaoDadosPessoaisLgpd.pdf" target="_blank">Lei Geral de
+                          Proteção de Dados Pessoais (LGPD)</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="text">
+                <p>Toda comunicação através da rede mundial de computadores está sujeita a interrupções ou atrasos,
+                  podendo prejudicar ordens, negociações ou a recepção de informações atualizadas. O Ether Private Bank
+                  isenta-se de responsabilidade por danos sofridos por seus clientes devido a falhas nos serviços
+                  disponibilizados por terceiros, incluindo, sem limitação, aqueles conectados à rede mundial de
+                  computadores. Todos os elementos deste site, incluindo, mas não se limitando a suas marcas, sinais de
+                  propaganda, textos, fotos e outras imagens, são propriedade e objeto de direitos exclusivos de seus
+                  respectivos titulares e/ou licenciados. A reprodução destes elementos sem prévia autorização dos
+                  respectivos proprietários e/ou licenciados pode constituir ou vir a constituir violação de direitos de
+                  propriedade intelectual, sujeitando os infratores às penalidades cabíveis na legislação civil e penal.
+                  Caso tenha interesse em utilizar algum dos elementos contidos neste site, por favor, entre em contato
+                  com o Ether Private Bank.</p>
+                <p>Ether PB LLC, com sede empresarial no seguinte endereço em Danbury: 235 Main St, Suite 103, Danbury,
+                  CT, 06810-6673, Estados Unidos. A filial nacional do Ether Private Bank, localizada na Rua Hum, número
+                  60, CEP 32.113-500, Bairro/Distrito Arvoredo 2ª Seção, Município Contagem, UF MG, Brasil, está
+                  juridicamente registrada como ETHER PRIVATE BANK LTDA, CNPJ: 54.360.394/0001-18.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-button-wrapper">
+        <div class="fixed-button-container "><a href="https://wa.me/553183116427" target="_blank"
+            rel="noopener noreferrer" data-toggle="tooltip" data-html="true" class="fixed-button"><svg
+              aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp"
+              class="svg-inline--fa fa-whatsapp fixed-button-icon" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512">
+              <path fill="currentColor"
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+              </path>
+            </svg></a></div>
+      </div>
+    </div>
+
+
+  </body>
+
+</html>
