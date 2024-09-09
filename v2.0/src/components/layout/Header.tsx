@@ -1,7 +1,5 @@
-
 import { Logo } from '@Components/ui/Logo';
 import { CountrySelector } from './CountrySelector';
-
 
 export function Header() {
   return (
@@ -10,14 +8,35 @@ export function Header() {
         <Logo />
         <nav className="heading-menu ms-0 ms-lg-4 ">
           <ul className="d-lg-flex align-items-center">
-            <li><a className="heading-link text-sm" href="#sobre-nos">Sobre Nós</a></li>
-            <li><a className="heading-link text-sm" href="#solucoes">Nossas Soluções</a></li>
-            <li><a className="heading-link text-sm" href="#servicos">Serviços</a></li>
-            <li><a className="heading-link text-sm" href="#contato">Contato</a></li>
+            {
+              [
+                { text: 'Sobre Nós', href: '#sobre-nos' },
+                { text: 'Nossas Soluções', href: '#solucoes' },
+                { text: 'Serviços', href: '#servicos' },
+                { text: 'Contato', href: '#contato' }
+              ].map(({ href, text }) => (
+                <ListItem key={text} text={text} href={href} />
+              ))
+            }
           </ul>
         </nav>
-          <CountrySelector />
+        <CountrySelector />
       </div>
     </header>
+  );
+}
+
+type ListItemProps = {
+  text: string;
+  href?: string;
+}
+
+function ListItem({ text, href }: ListItemProps) {
+  return (
+    <li>
+      <a className="heading-link text-sm" href={href}>
+        {text}
+      </a>
+    </li>
   );
 }

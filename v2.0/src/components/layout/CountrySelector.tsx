@@ -27,7 +27,7 @@ export function CountrySelector() {
         </svg>
       </button>
 
-      <CountryList ref={countryListRef} />
+      <CountryList refProp={countryListRef} />
     </div>
   );
 }

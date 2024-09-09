@@ -9,7 +9,7 @@ type CountryListType = {
   country: 'BR' | 'ES' | '中文' | 'EN';
 };
 
-export function CountryList({ ref }: { ref: RefObject<HTMLUListElement> }) {
+export function CountryList({ refProp }: { refProp: RefObject<HTMLUListElement> }) {
   const countries: CountryListType[] = [
     { flag: flagBr, country: 'BR' },
     { flag: flagPY, country: 'ES' },
@@ -18,7 +18,7 @@ export function CountryList({ ref }: { ref: RefObject<HTMLUListElement> }) {
   ];
 
   return (
-    <ul className="country-list" ref={ref}>
+    <ul className="country-list" ref={refProp}>
       {countries.map(({ country, flag }) => (
         <li key={country}>
           <img src={flag} alt={country} />
